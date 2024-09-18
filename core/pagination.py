@@ -3,7 +3,7 @@ from rest_framework.response import Response
 
 class CustomPagination(PageNumberPagination):
     # Default number of items per page
-    page_size = 5
+    page_size = 200  
     # Allow the client to set the page size using 'limit' query parameter
     page_size_query_param = 'limit'
     # Maximum number of items per page

@@ -10,6 +10,7 @@ class ProductCategorySerializer(serializers.ModelSerializer):
         
 
 class ProductItemSerializer(serializers.ModelSerializer):
+    # category=ProductCategorySerializer()
     # image=serializers.ImageField(use_url=False)
     class Meta:
         model=ProductItem

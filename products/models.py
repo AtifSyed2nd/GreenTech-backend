@@ -6,10 +6,14 @@ def category_image_path(instance, filename):
     # File will be uploaded to MEDIA_ROOT/category_images/<filename>
     return f'category_images/{filename}'
 
+def product_item_pdf_path(instance, filename):
+    # File will be uploaded to MEDIA_ROOT/product_item_pdfs/<filename>
+    return f'product_brochure/{filename}'
+
 class ProductCategory(models.Model):
     category_id = models.UUIDField(default=uuid.uuid4, primary_key=True)  # Unique ID for each category
     category_title = models.CharField(max_length=160, null=True, blank=True)  # Title of the category
-    category_desc=models.TextField(null=True, blank=True)
+    # category_desc=models.TextField(null=True, blank=True)
     is_active = models.BooleanField(default=False)  # Whether the category is active
     image = models.ImageField(upload_to=category_image_path, null=True, blank=True)  # Image associated with the category
     createdAt = models.DateTimeField(auto_now_add=True)  # Timestamp of creation
@@ -24,6 +28,7 @@ class ProductItem(models.Model):
     item_desc=models.TextField(null=True, blank=True)
     is_active = models.BooleanField(default=False)  # Whether the item is active
     image = models.ImageField(upload_to=category_image_path, null=True, blank=True)  # Image associated with the item
+    brochure = models.FileField(upload_to=product_item_pdf_path, null=True, blank=True)
     createdAt = models.DateTimeField(auto_now_add=True)  # Timestamp of item
     
     def __str__(self):
