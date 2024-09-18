@@ -31,7 +31,7 @@ CORS_ALLOW_HEADERS = [
 ]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 SECRET_KEY='asdfghjkhgfdsasdrtyu765rewsazxcvbnjkio908765432wsxcdfrt'
 
